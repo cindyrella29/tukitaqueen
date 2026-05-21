@@ -783,7 +783,7 @@
       top: calc(var(--nav-h) + 18px);
       justify-self: end;
       width: 460px;
-      min-height: max(700px, calc(100vh - var(--nav-h) + 120px));
+      min-height: calc(100vh - var(--nav-h) - 36px);
       max-height: none;
       display: grid;
       grid-template-rows: auto minmax(0, 1fr);
@@ -797,7 +797,7 @@
 
     .chat-frame {
       height: 100%;
-      min-height: 330px;
+      min-height: 220px;
     }
 
     .community-after {
@@ -829,7 +829,7 @@
         top: auto;
         justify-self: stretch;
         width: 100%;
-        min-height: 720px;
+        min-height: auto;
         max-height: none;
       }
 
@@ -852,7 +852,7 @@
       }
 
       .live-stack {
-        min-height: 640px;
+        min-height: auto;
       }
     }
   </style>
