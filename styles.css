@@ -124,9 +124,9 @@ a {
   gap: 24px;
   height: var(--nav-h);
   padding: 0 58px;
-  background: rgba(2, 0, 6, .94);
-  border-bottom: 1px solid rgba(193, 91, 255, .18);
-  box-shadow: 0 0 36px rgba(160, 32, 240, .12);
+  background: rgba(2, 0, 6, .82);
+  border-bottom: 1px solid rgba(217, 70, 239, .14);
+  box-shadow: 0 0 40px rgba(138, 43, 226, .12);
   backdrop-filter: blur(18px);
 }
 
@@ -135,7 +135,7 @@ a {
   width: 220px;
   max-height: 78px;
   object-fit: contain;
-  filter: drop-shadow(0 0 10px rgba(193, 91, 255, .85));
+  filter: drop-shadow(0 0 14px rgba(217, 70, 239, .9));
 }
 
 .nav-links {
