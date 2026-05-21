@@ -16,7 +16,7 @@
       --gold: #FFD76A;
       --text: #fff;
       --muted: rgba(255, 255, 255, .64);
-      --nav-h: 112px;
+      --nav-h: 96px;
       --scroll-progress: 0;
     }
 
@@ -74,7 +74,7 @@
     .topbar {
       position: fixed;
       inset: 0 0 auto;
-      z-index: 20;
+      z-index: 10;
       height: var(--nav-h);
       display: grid;
       grid-template-columns: 300px 1fr 430px;
@@ -124,7 +124,6 @@
 
     .outline-action,
     .primary-action {
-      width: 150px;
       height: 48px;
       display: inline-flex;
       align-items: center;
@@ -145,10 +144,24 @@
     }
 
     .primary-action {
-      width: 178px;
       border: 0;
       background: linear-gradient(135deg, #8A2BE2, #A020F0);
       box-shadow: 0 0 18px rgba(160, 32, 240, .65), inset 0 0 14px rgba(255, 255, 255, .16);
+    }
+
+    .top-actions .outline-action,
+    .top-actions .primary-action {
+      width: 150px;
+      min-height: 48px;
+      padding: 0;
+      border-radius: 5px;
+      gap: 8px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .top-actions .primary-action {
+      width: 178px;
     }
 
     .button-crown {
@@ -452,11 +465,11 @@
         font-size: 13px;
       }
 
-      .outline-action {
+      .top-actions .outline-action {
         width: 132px;
       }
 
-      .primary-action {
+      .top-actions .primary-action {
         width: 154px;
       }
     }
@@ -854,12 +867,12 @@
       <a href="salas.html">Salas</a>
       <a href="#">Torneos</a>
       <a href="#">Ranking</a>
-      <a href="#">Dinamicas</a>
+      <a href="#">Dinámicas</a>
       <a class="active" href="comunidad.html">Comunidad</a>
       <a href="#">Store</a>
     </nav>
     <div class="top-actions">
-      <a class="outline-action" href="login.html">Iniciar sesion</a>
+      <a class="outline-action" href="login.html">Iniciar sesión</a>
       <a class="primary-action" href="registro.html">
         <img class="button-crown" src="https://tukitaqueen.com/images/corona.svg" alt="">
         Crear cuenta
