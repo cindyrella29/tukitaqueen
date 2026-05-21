@@ -290,7 +290,7 @@
       top: 18px;
       right: max(18px, calc((100vw - 1500px) / 2));
       z-index: 5;
-      width: 460px;
+      width: 420px;
       max-height: calc(100% - 36px);
       display: grid;
       gap: 0;
@@ -673,7 +673,7 @@
       position: sticky;
       top: calc(var(--nav-h) + 18px);
       right: auto;
-      width: 460px;
+      width: 420px;
       max-height: calc(100vh - var(--nav-h) - 36px);
       opacity: 1;
       transform: none;
@@ -733,7 +733,7 @@
       width: 100vw;
       margin: 0;
       padding: 18px 18px 0 0;
-      grid-template-columns: minmax(0, calc(100vw - 496px)) 460px;
+      grid-template-columns: minmax(0, calc(100vw - 456px)) 420px;
       gap: 18px;
       align-items: start;
     }
@@ -779,10 +779,11 @@
     }
 
     .live-stack {
-      position: sticky;
+      position: fixed;
       top: calc(var(--nav-h) + 18px);
+      right: 20px;
       justify-self: end;
-      width: 460px;
+      width: 420px;
       min-height: calc(100vh - var(--nav-h) - 36px);
       max-height: none;
       display: grid;
@@ -801,7 +802,7 @@
     }
 
     .community-after {
-      width: calc(100vw - 514px);
+      width: calc(100vw - 474px);
       margin: 18px auto 0 0;
       padding-left: 18px;
       padding-right: 0;
