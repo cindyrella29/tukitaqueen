@@ -33,10 +33,10 @@
       color: var(--text);
       font-family: "Montserrat", system-ui, sans-serif;
       background:
-        radial-gradient(circle at 18% 18%, rgba(217, 70, 239, .18), transparent 32%),
-        radial-gradient(circle at 82% 32%, rgba(138, 43, 226, .17), transparent 34%),
-        linear-gradient(180deg, rgba(3, 0, 7, .92), rgba(4, 0, 10, .96));
+        linear-gradient(180deg, rgba(3, 0, 7, .9), rgba(4, 0, 10, .95)),
+        url("https://tukitaqueen.com/images/fondo.webp") center/cover fixed no-repeat;
       overflow-x: hidden;
+      cursor: none;
     }
 
     body::before,
@@ -290,7 +290,7 @@
       top: 18px;
       right: max(18px, calc((100vw - 1500px) / 2));
       z-index: 5;
-      width: 460px;
+      width: 110px;
       max-height: calc(100% - 36px);
       display: grid;
       gap: 0;
@@ -646,7 +646,7 @@
       height: 100%;
       min-height: 0;
       object-fit: cover;
-      object-position: left top;
+      object-position: center top;
       transform: none;
       filter: saturate(1.14) contrast(1.08) brightness(.96);
     }
@@ -673,7 +673,7 @@
       position: sticky;
       top: calc(var(--nav-h) + 18px);
       right: auto;
-      width: 460px;
+      width: 110px;
       max-height: calc(100vh - var(--nav-h) - 36px);
       opacity: 1;
       transform: none;
@@ -733,7 +733,7 @@
       width: 100vw;
       margin: 0;
       padding: 18px 18px 0 0;
-      grid-template-columns: minmax(0, calc(100vw - 496px)) 460px;
+      grid-template-columns: minmax(0, calc(100vw - 146px)) 110px;
       gap: 18px;
       align-items: start;
     }
@@ -750,26 +750,20 @@
 
     .community-photo-shell {
       inset: 0 auto 0 0;
-      width: min(100%, 1040px);
+      width: 100%;
       border-radius: 0;
-      -webkit-mask-image:
-        linear-gradient(90deg, transparent 0, #000 8%, #000 82%, transparent 100%),
-        linear-gradient(180deg, transparent 0, #000 7%, #000 88%, transparent 100%);
-      -webkit-mask-composite: source-in;
-      mask-image:
-        linear-gradient(90deg, transparent 0, #000 8%, #000 82%, transparent 100%),
-        linear-gradient(180deg, transparent 0, #000 7%, #000 88%, transparent 100%);
-      mask-composite: intersect;
+      -webkit-mask-image: none;
+      mask-image: none;
     }
 
     .community-photo {
-      object-position: left top;
+      object-position: center top;
       filter: saturate(1.16) contrast(1.08) brightness(.98);
     }
 
     .community-photo-shell::before {
       background:
-        linear-gradient(90deg, rgba(3, 0, 7, .24), transparent 18%, transparent 72%, rgba(3, 0, 7, .42)),
+        linear-gradient(90deg, rgba(3, 0, 7, .74), rgba(3, 0, 7, .12) 16%, rgba(3, 0, 7, .12) 84%, rgba(3, 0, 7, .74)),
         linear-gradient(180deg, transparent 40%, rgba(3, 0, 7, .68));
     }
 
@@ -779,10 +773,11 @@
     }
 
     .live-stack {
-      position: sticky;
+      position: fixed;
       top: calc(var(--nav-h) + 18px);
+      right: 20px;
       justify-self: end;
-      width: 460px;
+      width: 110px;
       min-height: calc(100vh - var(--nav-h) - 36px);
       max-height: none;
       display: grid;
@@ -801,7 +796,7 @@
     }
 
     .community-after {
-      width: calc(100vw - 514px);
+      width: calc(100vw - 164px);
       margin: 18px auto 0 0;
       padding-left: 18px;
       padding-right: 0;
@@ -854,7 +849,39 @@
       .live-stack {
         min-height: auto;
       }
+
+      .copyright-footer {
+        position: static;
+        width: 100%;
+        margin: 10px auto 24px;
+        opacity: .5;
+      }
     }
+
+    .copyright-footer {
+      position: fixed;
+      right: 20px;
+      bottom: 8px;
+      width: 110px;
+      text-align: center;
+      font-size: 10px;
+      letter-spacing: .05em;
+      color: rgba(197, 166, 216, .72);
+      opacity: .56;
+      text-shadow: 0 0 10px rgba(168, 85, 247, .35);
+      z-index: 6;
+      pointer-events: none;
+      font-weight: 500;
+      line-height: 1.35;
+    }
+
+    #luxury-cursor {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 9999;
+    }
+
   </style>
 </head>
 <body>
@@ -929,11 +956,78 @@
     </section>
   </main>
 
-  <footer class="footer">
-    <span>Tukita Queen</span>
-    <span>© 2026 Tukita Queen - Todos los derechos reservados.</span>
-    <span>Terminos · Privacidad · Contacto</span>
-  </footer>
+  <footer class="copyright-footer">© 2026 Tukita Queen💜 — Todos los derechos reservados</footer>
+  <canvas id="luxury-cursor" aria-hidden="true"></canvas>
 
+
+  <script>
+    (() => {
+      const canvas = document.getElementById('luxury-cursor');
+      const ctx = canvas.getContext('2d');
+      const particles = [];
+      let mouseX = window.innerWidth / 2;
+      let mouseY = window.innerHeight / 2;
+
+      const resize = () => {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+      };
+
+      const spawn = (x, y) => {
+        particles.push({
+          x, y,
+          vx: (Math.random() - 0.5) * 0.8,
+          vy: (Math.random() - 0.5) * 0.8,
+          life: 1,
+          size: Math.random() * 2.2 + 0.8
+        });
+        if (particles.length > 140) particles.shift();
+      };
+
+      const draw = () => {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        particles.forEach((p, i) => {
+          p.x += p.vx;
+          p.y += p.vy;
+          p.vy -= 0.005;
+          p.life -= 0.018;
+          if (p.life <= 0) return;
+
+          ctx.beginPath();
+          ctx.fillStyle = `rgba(198, 112, 255, ${p.life * 0.85})`;
+          ctx.shadowColor = 'rgba(173, 88, 255, 0.95)';
+          ctx.shadowBlur = 16;
+          ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+          ctx.fill();
+
+          particles[i] = p;
+        });
+
+        for (let i = particles.length - 1; i >= 0; i--) {
+          if (particles[i].life <= 0) particles.splice(i, 1);
+        }
+
+        ctx.beginPath();
+        ctx.fillStyle = 'rgba(208, 132, 255, .95)';
+        ctx.shadowColor = 'rgba(180, 105, 255, 1)';
+        ctx.shadowBlur = 24;
+        ctx.arc(mouseX, mouseY, 3.2, 0, Math.PI * 2);
+        ctx.fill();
+
+        requestAnimationFrame(draw);
+      };
+
+      window.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+        spawn(mouseX, mouseY);
+        spawn(mouseX + (Math.random() - 0.5) * 6, mouseY + (Math.random() - 0.5) * 6);
+      });
+
+      window.addEventListener('resize', resize);
+      resize();
+      draw();
+    })();
+  </script>
 </body>
 </html>
