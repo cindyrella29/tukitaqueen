@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tukita Queen</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Great+Vibes&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <canvas id="purpleParticles" aria-hidden="true"></canvas>
+
+  <main class="screen">
+    <header class="topbar">
+      <a class="brand" href="login.html" aria-label="Tukita Queen">
+        <img src="https://tukitaqueen.com/images/tukita-nombre.png" alt="Tukita Queen">
+      </a>
+
+      <nav class="nav-links" aria-label="Principal">
+        <a href="login.html">Inicio</a>
+        <a href="salas.html">Salas</a>
+        <a href="#">Torneos</a>
+        <a href="#">Ranking</a>
+        <a href="#">Dinámicas</a>
+        <a href="comunidad.html">Comunidad</a>
+        <a href="#">Store</a>
+      </nav>
+
+      <div class="top-actions">
+        <a class="outline-action" href="#">Iniciar sesión</a>
+        <a class="primary-action" href="registro.html">
+          <img class="button-crown action-crown" src="https://tukitaqueen.com/images/corona.svg" alt="" aria-hidden="true">
+          Crear cuenta
+        </a>
+      </div>
+    </header>
+
+    <section class="hero" aria-label="Tukita Queen">
+      <div class="vertical-title vertical-title-left">Tukita</div>
+      <img class="crown-decor side-crown side-crown-left" src="https://tukitaqueen.com/images/corona.svg" alt="" aria-hidden="true">
+
+      <div class="portrait-stage">
+        <img class="queen" src="https://tukitaqueen.com/images/lamaspro.png" alt="Tukita Queen">
+        <div class="light-beam beam-one"></div>
+        <div class="light-beam beam-two"></div>
+        <div class="light-beam beam-three"></div>
+
+        <div class="emotional-copy">
+          <p>No entras a un stream...</p>
+          <h1>entras a una familia <span>💜</span></h1>
+        </div>
+      </div>
+
+      <aside class="login-card" aria-label="Formulario de inicio de sesión">
+        <img class="crown-decor login-crown" src="https://tukitaqueen.com/images/corona.svg" alt="" aria-hidden="true">
+
+        <h2>Iniciar sesión</h2>
+        <p class="welcome">Bienvenido de vuelta, <strong>lechucero</strong>
+          <img class="tiny-crown" src="https://tukitaqueen.com/images/corona.svg" alt="" aria-hidden="true">
+        </p>
+
+        <div class="ornament"><span></span></div>
+
+        <form class="login-form" action="#">
+          <div class="field">
+            <label for="email">Correo electrónico</label>
+            <div class="input-shell">
+              <svg class="field-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M4 6h16v12H4z"/>
+                <path d="m4 7 8 6 8-6"/>
+              </svg>
+              <input id="email" name="email" type="email" placeholder="Ingresa tu correo electrónico" autocomplete="email">
+            </div>
+          </div>
+
+          <div class="field">
+            <div class="label-row">
+              <label for="password">Contraseña</label>
+              <a href="#">¿Olvidaste tu contraseña?</a>
+            </div>
+            <div class="input-shell">
+              <svg class="field-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M6 10h12v10H6z"/>
+                <path d="M8 10V7a4 4 0 0 1 8 0v3"/>
+              </svg>
+              <input id="password" name="password" type="password" placeholder="Ingresa tu contraseña" autocomplete="current-password">
+              <button class="eye-toggle" type="button" aria-label="Mostrar contraseña" aria-pressed="false">
+                <svg class="eye-open" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M2.5 12s3.4-6 9.5-6 9.5 6 9.5 6-3.4 6-9.5 6-9.5-6-9.5-6Z"/>
+                  <circle cx="12" cy="12" r="3"/>
+                </svg>
+                <svg class="eye-closed" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M3 3l18 18"/>
+                  <path d="M10.6 6.2A9.8 9.8 0 0 1 12 6c6.1 0 9.5 6 9.5 6a16 16 0 0 1-2.4 3.2"/>
+                  <path d="M6.3 6.8C3.8 8.5 2.5 12 2.5 12s3.4 6 9.5 6c1.5 0 2.8-.3 4-.9"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <div class="remember-row">
+            <label class="check-field">
+              <input type="checkbox" checked>
+              <span></span>
+              Recuérdame
+            </label>
+          </div>
+
+          <button class="login-button" type="submit">
+            Iniciar sesión
+            <img class="button-crown login-button-crown" src="https://tukitaqueen.com/images/corona.svg" alt="" aria-hidden="true">
+          </button>
+        </form>
+
+        <div class="continue">
+          <span></span>
+          <p>o continúa con</p>
+          <span></span>
+        </div>
+
+        <a class="steam-button" href="#">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 2a10 10 0 0 0-9.8 8.1l5.4 2.2a2.8 2.8 0 0 1 1.7-.5l2.4-3.5v-.1a3.8 3.8 0 1 1 3.8 3.8h-.1l-3.4 2.5a2.9 2.9 0 0 1-5.6 1.4l-3.9-1.6A10 10 0 1 0 12 2Zm-2.2 14.6a1.7 1.7 0 0 1-2.1-.8l1.2.5a1.3 1.3 0 0 0 1-2.4l-1.3-.5a1.7 1.7 0 1 1 1.2 3.2Zm5.7-5.9a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5Zm0-.9a1.6 1.6 0 1 0 0-3.2 1.6 1.6 0 0 0 0 3.2Z"/>
+          </svg>
+          Iniciar sesión con Steam
+        </a>
+
+        <p class="register">¿No tienes una cuenta? <a href="registro.html">Regístrate aquí</a></p>
+      </aside>
+
+      <div class="vertical-title vertical-title-right">Queen</div>
+      <img class="crown-decor side-crown side-crown-right" src="https://tukitaqueen.com/images/corona.svg" alt="" aria-hidden="true">
+    </section>
+
+    <section class="feature-strip" aria-label="Beneficios">
+      <article>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 5 6v5c0 4.6 3 8 7 10 4-2 7-5.4 7-10V6l-7-3Z"/><path d="M12 10v5"/><path d="M9.8 12.2 12 15l3-4"/></svg>
+        <p>Tu seguridad<br>es nuestra prioridad</p>
+      </article>
+      <article>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 3 9l9 12 9-12-9-6Z"/><path d="M3 9h18"/><path d="m8 9 4 12 4-12"/></svg>
+        <p>Comunidad<br>sana y activa</p>
+      </article>
+      <article>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.8 5.6a5.1 5.1 0 0 0-7.2 0L12 7.2l-1.6-1.6a5.1 5.1 0 1 0-7.2 7.2L12 21l8.8-8.2a5.1 5.1 0 0 0 0-7.2Z"/></svg>
+        <p>Streams<br>en vivo cada día</p>
+      </article>
+      <article>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 2.8 5.7 6.2.9-4.5 4.4 1.1 6.2L12 17.3l-5.6 2.9L7.5 14 3 9.6l6.2-.9L12 3Z"/></svg>
+        <p>Torneos<br>y premios exclusivos</p>
+      </article>
+    </section>
+    <footer class="footer">© 2026 Tukita Queen💜 — Todos los derechos reservados.</footer>
+  </main>
+</body>
+</html>
